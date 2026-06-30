@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import type { Column } from '../../types/types';
 import CellEditor from './CellEditor';
+import styles from './Cell.module.css';
 
 interface TableCellProps {
   column: Column;
@@ -22,10 +23,10 @@ function formatValue(value: any, column: Column) {
 
 function TableCell({column, value, isEditing, onStartEdit, onSave, onCancel}: TableCellProps) {
   return (
-    <td style={{width: column.width}}>
+    <td className={styles.Cell} style={{width: column.width}}>
       {isEditing ? 
       (<CellEditor column={column} value={value} onSave={onSave} onCancel={onCancel}/>) :
-       (<div onClick={onStartEdit}> {formatValue(value, column)} </div>)}
+       (<div className={styles.display} onClick={onStartEdit}> {formatValue(value, column)} </div>)}
     </td>
   );
 }

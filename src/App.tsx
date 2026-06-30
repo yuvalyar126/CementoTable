@@ -16,7 +16,7 @@ function App() {
     }, []);
 
   return (
-    <div>
+    <div className="app">
       <h1>Generic Table</h1>
       <GenericTable tableData={tableData} onCellChange={handleCellChange} />
     </div>

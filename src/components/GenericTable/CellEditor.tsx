@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Column } from '../../types/types';
+import styles from './Cell.module.css';
 
 interface CellEditorProps {
   column: Column;
@@ -53,7 +54,7 @@ function CellEditor({column, value, onSave, onCancel}: CellEditorProps) {
   };
 
   return (
-    <div>
+    <div className={styles.editor}>
       {renderInput()}
       <button type="button" onClick={() => onSave(draft)}>Save</button>
       <button type="button" onClick={onCancel}>Cancel</button>
