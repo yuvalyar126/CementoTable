@@ -1,0 +1,17 @@
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+  }
+  
+  .option {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+  }

@@ -1,34 +1,71 @@
 .cell {
-    border: 1px solid gray;
+    border: 1px solid #e5e7eb;
     padding: 6px 10px;
     vertical-align: middle;
+    font-size: 14px;
   }
   
   .display {
     cursor: pointer;
-    min-height: 20px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    min-height: 22px;
+    display: flex;
+    align-items: center;
   }
   
   .display:hover {
-    background: whitesmoke;
+    background: #f3f4f6;
   }
   
+  /* input on top, buttons below: predictable at any column width */
   .editor {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 6px;
   }
   
   .input {
-    padding: 4px 6px;
-    border: 1px solid gray;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 5px 8px;
+    border: 1px solid #cbd5e1;
     border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  
+  .actions {
+    display: flex;
+    gap: 6px;
   }
   
   .button {
-    padding: 3px 8px;
-    border: 1px solid gray;
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid #cbd5e1;
     border-radius: 4px;
-    background: white;
+    background: #fff;
     cursor: pointer;
+    font-size: 13px;
+  }
+  
+  .button:hover {
+    background: #f3f4f6;
+  }
+  
+  .save {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+  }
+  
+  .save:hover {
+    background: #1d4ed8;
   }

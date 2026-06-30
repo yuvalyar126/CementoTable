@@ -5,7 +5,7 @@ const ROLE_OPTIONS = ['Admin', 'Editor', 'Viewer'];
 
 const columns: Column[] = [
     { id: 'name', ordinalNo: 1, title: 'Name', type: 'string', width: 180 },
-    { id: 'age', ordinalNo: 2, title: 'Age', type: 'number', width: 80 },
+    { id: 'age', ordinalNo: 2, title: 'Age', type: 'number', width: 100 },
     { id: 'city', ordinalNo: 3, title: 'City', type: 'string', width: 150 },
     { id: 'salary', ordinalNo: 4, title: 'Salary', type: 'number', width: 120 },
     { id: 'isActive', ordinalNo: 5, title: 'Active', type: 'boolean', width: 100 },

@@ -16,39 +16,24 @@ function CellEditor({column, value, onSave, onCancel}: CellEditorProps) {
     switch (column.type) {
       case 'number':
         return (
-          <input
-            type="number"
-            value={draft ?? ''}
-            onChange={(e) => setDraft(e.target.value === '' ? '' : Number(e.target.value))}
-            />
+          <input type="number" className={styles.input} value={draft ?? ''} onChange={(e) => setDraft(e.target.value === '' ? '' : Number(e.target.value))}/>
         );
 
       case 'boolean':
         return (
-          <input
-            type="checkbox"
-            checked={Boolean(draft)}
-            onChange={(e) => setDraft(e.target.checked)}
-          />
+          <input type="checkbox" checked={Boolean(draft)} onChange={(e) => setDraft(e.target.checked)}/>
         );
 
       case 'selection':
         return (
-          <select
-            value={draft ?? ''}
-            onChange={(e) => setDraft(e.target.value)}
-          >
+          <select className={styles.input} value={draft ?? ''} onChange={(e) => setDraft(e.target.value)}>
             {column.options?.map((option) => (<option key={option} value={option}>{option}</option>))}
           </select>
         );
 
       default: 
         return (
-          <input
-            type="text"
-            value={draft ?? ''}
-            onChange={(e) => setDraft(e.target.value)}
-          />
+          <input type="text" className={styles.input} value={draft ?? ''} onChange={(e) => setDraft(e.target.value)}/>
         );
     }
   };
@@ -56,8 +41,10 @@ function CellEditor({column, value, onSave, onCancel}: CellEditorProps) {
   return (
     <div className={styles.editor}>
       {renderInput()}
-      <button type="button" onClick={() => onSave(draft)}>Save</button>
-      <button type="button" onClick={onCancel}>Cancel</button>
+      <div className={styles.actions}>
+        <button type="button" className={`${styles.button} ${styles.save}`} onClick={() => onSave(draft)}>Save</button>
+        <button type="button" className={styles.button} onClick={onCancel}>Cancel</button>
+      </div>
     </div>
   );
 }

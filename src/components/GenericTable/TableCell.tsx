@@ -23,7 +23,7 @@ function formatValue(value: any, column: Column) {
 
 function TableCell({column, value, isEditing, onStartEdit, onSave, onCancel}: TableCellProps) {
   return (
-    <td className={styles.Cell} style={{width: column.width}}>
+    <td className={styles.cell} style={{ width: column.width }}>
       {isEditing ? 
       (<CellEditor column={column} value={value} onSave={onSave} onCancel={onCancel}/>) :
        (<div className={styles.display} onClick={onStartEdit}> {formatValue(value, column)} </div>)}

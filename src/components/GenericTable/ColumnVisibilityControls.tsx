@@ -1,4 +1,5 @@
 import type { Column } from '../../types/types';
+import styles from './ColumnVisibilityControls.module.css';
 
 interface ColumnVisibilityControlsProps {
   columns: Column[];
@@ -8,9 +9,9 @@ interface ColumnVisibilityControlsProps {
 
 function ColumnVisibilityControls({columns, visibleColumnIds, onToggle}: ColumnVisibilityControlsProps) {
   return (
-    <div>
+    <div className={styles.controls}>
       {columns.map((column) => (
-        <label key={column.id}>
+        <label key={column.id} className={styles.option}>
           <input type="checkbox" checked={visibleColumnIds.has(column.id)} onChange={() => onToggle(column.id)}/>
           {column.title}
         </label>

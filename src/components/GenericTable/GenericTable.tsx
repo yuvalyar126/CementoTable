@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback } from 'react';
 import type { TableData, EditingCell } from '../../types/types';
 import TableRow from './TableRow';
 import ColumnVisibilityControls from './ColumnVisibilityControls';
+import styles from './GenericTable.module.css';
 
 interface GenericTableProps {
   tableData: TableData;
@@ -50,8 +51,8 @@ function GenericTable({tableData, onCellChange}: GenericTableProps) {
   return (
     <div>
       <ColumnVisibilityControls columns={columns} visibleColumnIds={visibleColumnIds} onToggle={handleToggle}/>
-
-      <table>
+    <div className={styles.wrapper}>
+    <table className={styles.table}>
         <thead>
           <tr>
             {visibleColumns.map((column) => (
@@ -68,6 +69,8 @@ function GenericTable({tableData, onCellChange}: GenericTableProps) {
           ))}
         </tbody>
       </table>
+    </div>
+     
     </div>
   );
 }
